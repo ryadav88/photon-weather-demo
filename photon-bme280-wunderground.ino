@@ -34,7 +34,7 @@ void setup()
 
   //*OverSample can be: 0, skipped - 1 through 5, oversampling *1, *2, *4, *8, *16 respectively
 	mySensor.settings.tempOverSample = 5;
-  mySensor.settings.pressOverSample = 5;
+  	mySensor.settings.pressOverSample = 5;
 	mySensor.settings.humidOverSample = 5;
 
 	Serial.begin(57600);
@@ -50,7 +50,7 @@ void loop()
   confirm();
   sendToWU();
   Serial.println();
-	delay(2000);
+  delay(2000);
 }
 
 
@@ -77,17 +77,17 @@ inches = pascals * 0.0002953; // Calc for converting Pa to inHg (Wunderground ex
 void confirm(){
   //Sends the sensor variables to serial to check
   Serial.print("Temperature: ");
-	Serial.print(tempF);
-	Serial.println(" degrees F");
+  Serial.print(tempF);
+  Serial.println(" degrees F");
 
-	Serial.print("Pressure: ");
-	Serial.print(inches);
-	Serial.println(" Pa");
+  Serial.print("Pressure: ");
+  Serial.print(inches);
+  Serial.println(" Pa");
 
-	Serial.print("%RH: ");
-	Serial.print(humidity);
-	Serial.println(" %");
-	Serial.print("NOWNOW: ");
+  Serial.print("%RH: ");
+  Serial.print(humidity);
+  Serial.println(" %");
+  Serial.print("NOWNOW: ");
 }
 
 void sendToWU()
